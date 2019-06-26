@@ -39,7 +39,7 @@ public class CrimeFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mCrime.setmTitle(s.toString());
+                mCrime.setTitle(s.toString());
 
             }
 
@@ -51,14 +51,14 @@ public class CrimeFragment extends Fragment {
         });
 
         mDateButton = (Button) v.findViewById(R.id.crime_date);
-        mDateButton.setText(mCrime.getmDate().toString());
+        mDateButton.setText(mCrime.getDate().toString());
         mDateButton.setEnabled(false);// p136禁用按钮，为了以后更改按钮时期显示
 
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);// p136设置监听更新Crime时的mSolved变化
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                mCrime.setmSolved(isChecked);
+                mCrime.setSolved(isChecked);
             }
         });
 

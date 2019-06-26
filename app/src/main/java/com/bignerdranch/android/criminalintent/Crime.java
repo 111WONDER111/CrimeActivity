@@ -11,34 +11,34 @@ public class Crime {
     private UUID mId; // 通用唯一标识码
     private String mTitle;
 
-    public Date getmDate() {
+    public Date getDate() {
         return mDate;
     }
 
-    public void setmDate(Date mDate) {
-        this.mDate = mDate;
+    public void setmDate(Date date) {
+        mDate = date;
     }
 
-    public boolean ismSolved() { // 布尔型，is
+    public boolean isSolved() { // 布尔型，is
         return mSolved;
     }
 
-    public void setmSolved(boolean mSolved) {
-        this.mSolved = mSolved;
+    public void setSolved(boolean solved) {
+        mSolved = solved;
     }
 
     private Date mDate;// p132 第八章
     private boolean mSolved;
 
-    public UUID getmId() {
+    public UUID getId() {
         return mId;
     }
 
-    public String getmTitle() {
+    public String getTitle() {
         return mTitle;
     }
 
-    public void setmTitle(String mTitle) {
+    public void setTitle(String mTitle) {
         this.mTitle = mTitle;
     }
 
