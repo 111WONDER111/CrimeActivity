@@ -1,5 +1,6 @@
 package com.bignerdranch.android.criminalintent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,12 +33,23 @@ public class CrimeListFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {  // 刷新列表项P181
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
-        List<Crime> crimes = crimeLab.getmCrimes();
+        List<Crime> crimes = crimeLab.getCrimes();
 
-        mAdapter = new CrimeAdapter(crimes);
-        mCrimeRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null) {
+            mAdapter = new CrimeAdapter(crimes);
+            mCrimeRecyclerView.setAdapter(mAdapter);
+        } else {
+            mAdapter.notifyDataSetChanged();
+        }
+
     }
 
     // 定义ViewHolder内部类，为了看见列表crime
@@ -73,9 +85,15 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(),
-                    mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
-                    .show();
+//            Toast.makeText(getActivity(),
+//                    mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT)
+//                    .show();
+
+            // 将toast替换为启动CrimeActivity实例的代码
+            // Intent intent = new Intent(getActivity(), CrimeActivity.class);
+            // Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getId());// p175
+                Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());// P189因为设置左滑右滑，改变启动的活动
+                startActivity(intent);
         }
     }
 
