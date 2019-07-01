@@ -15,7 +15,7 @@ public class Crime {
         return mDate;
     }
 
-    public void setmDate(Date date) {
+    public void setDate(Date date) {
         mDate = date;
     }
 

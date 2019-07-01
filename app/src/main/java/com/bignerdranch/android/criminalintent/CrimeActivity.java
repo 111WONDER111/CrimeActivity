@@ -30,6 +30,8 @@ import java.util.UUID;
 //    }
 //}
 
+// 在有CrimePagerActivity后CrimeActivity已弃用
+
 // 实现p155的抽象类activity后，改变CrimeActivity
 public class CrimeActivity extends SingleFragmentActivity {
 
