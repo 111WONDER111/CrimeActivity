@@ -125,6 +125,9 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);
             mCrimeRecyclerView.setAdapter(mAdapter);
         } else {
+
+            mAdapter.setCrimes(crimes); // 十四章用于刷新回退后crime显示，p246
+
             mAdapter.notifyDataSetChanged();
         }
 
@@ -208,6 +211,11 @@ public class CrimeListFragment extends Fragment {
             @Override
             public int getItemCount() {
                 return mCrimes.size();
+            }
+
+            // 十四章用于刷新回退后crime显示，p246
+            public void setCrimes(List<Crime> crimes) {
+                mCrimes = crimes;
             }
 
         }

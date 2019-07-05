@@ -43,7 +43,16 @@ public class Crime {
     }
 
     public Crime() {
-        mId = UUID.randomUUID();
+
+        this(UUID.randomUUID());
+
+        // mId = UUID.randomUUID(); // p245删除
+        // mDate = new Date(); // p245删除
+    }
+
+    // p244
+    public Crime(UUID id) {
+        mId = id;
         mDate = new Date();
     }
 
