@@ -27,8 +27,20 @@ public class Crime {
         mSolved = solved;
     }
 
+
+
     private Date mDate;// p132 第八章
     private boolean mSolved;
+
+    public String getSuspect() {
+        return mSuspect;
+    }
+
+    public void setSuspect(String suspect) {
+        mSuspect = suspect;
+    }
+
+    private String mSuspect; // 存放嫌疑人姓名，p252
 
     public UUID getId() {
         return mId;

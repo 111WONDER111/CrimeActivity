@@ -125,6 +125,8 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.DATE, crime.getDate().getTime());
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
 
+        values.put(CrimeTable.Cols.SUSPECT, crime.getSuspect()); // p253嫌疑人数据库字段之一
+
         return values;
     }
 
