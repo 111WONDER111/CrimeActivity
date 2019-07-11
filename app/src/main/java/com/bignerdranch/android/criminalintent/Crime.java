@@ -40,6 +40,11 @@ public class Crime {
         mSuspect = suspect;
     }
 
+    // P271 照片文件名获取方法
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
+
     private String mSuspect; // 存放嫌疑人姓名，p252
 
     public UUID getId() {
